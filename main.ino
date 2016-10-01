@@ -224,32 +224,31 @@ boolean configurarAltura(){
 void loop() {
 //---------------------------------------------------------------------------------------------
   //Funcionalidad para Contraer los pistones
-  if(contraerPistones  && !extenderPistones && !alturaPiston ){
+  if(contraerPistones ){
     contraerBrazos();
     contraerPistones = false;
     extenderPistones = false;
     alturaPiston = false;
-  }else {}
+  }
 
 //---------------------------------------------------------------------------------------------
   //Funcionalidad para Extender los pistones
-  if(extenderPistones && !contraerPistones && !alturaPiston){
+  else if(extenderPistones ){
     extenderBrazos();
     extenderPistones = false;
     contraerPistones = false;
     alturaPiston = false;
-  }else{}
+  }
 //---------------------------------------------------------------------------------------------
  //Funcionalidad para Ajustar la altura de los brazos
-  if(alturaPiston && !contraerPistones  && !extenderPistones){
+  else if(alturaPiston ){
     configurarAltura();
     extenderPistones = false;
     contraerPistones = false;
     alturaPiston = false;
-  }else{}
-    
+  }
 
-  delay(1000); 
+  delay(100); 
 } //FIN DEL PROGRAMA PRINCIPAL
 
 
